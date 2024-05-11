@@ -1,193 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap.css">
-</head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Website E.Tourism</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
-    <header>
-        <div class="">
-            <div class="menu">
-                <div class="content-menu">
-                    <div class="logo-header">
-                        <img src="./assets/image/logo.png" alt="">
-                    </div>
-                    <div class="menu-header">
-                        <ul class="ul-menu">
-                            <li><a href="">Fetures</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Pricing</a></li>
-                            <li><a href="">Reviews</a></li>
-                            <li><a href="">Contact</a></li>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/logored.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Modernizer for Portfolio -->
+    <script src="js/modernizer.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="host_version"> 
+
+	<!-- Modal -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header tit-up">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Customer Login</h4>
+			</div>
+			<div class="modal-body customer-box">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs">
+					<li><a class="active" href="#Login" data-toggle="tab">Login</a></li>
+					<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="Login">
+						<form role="form" class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="email1" placeholder="Name" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="exampleInputPassword1" placeholder="Email" type="email">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
+										Submit
+									</button>
+									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane" id="Registration">
+						<form role="form" class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" placeholder="Name" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="email" placeholder="Email" type="email">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="mobile" placeholder="Mobile" type="email">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="password" placeholder="Password" type="password">
+								</div>
+							</div>
+							<div class="row">							
+								<div class="col-sm-10">
+									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
+										Save &amp; Continue
+									</button>
+									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
+										Cancel</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+    <!-- LOADER -->
+	<div id="preloader">
+		<div class="loader-container">
+			<div class="progress-br float shadow">
+				<div class="progress__item"></div>
+			</div>
+		</div>
+	</div>
+	<!-- END LOADER -->	
+	
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logoH.png" alt="" style="width: 70px; height: 70px;"/>
+                    <h1 class="title-logo">
+                        E.TOURISM
+                    </h1>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+						<li class="nav-item">
+                            <a class="nav-link" href="course.html" id="dropdown-a">Course </a>
+                        </li>
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-pause="hover" data-interval="false" >
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleControls" data-slide-to="1"></li>
+			<li data-target="#carouselExampleControls" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+				<div id="home" class="first-section" style="background-image:url('images/sliderh1.jpg');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-right">
+									<div class="big-tagline">
+										<h2><strong>E.TOURISM </strong> education Technology</h2>
+										<p class="lead">There are modern, synchronous facilities and laboratories with huge research spaces suitable for learning and teaching. </p>
+											<a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Read More</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+			<div class="carousel-item">
+				<div id="home" class="first-section" style="background-image:url('images/sliderh2.jpg');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-left">
+									<div class="big-tagline">
+										<h2 data-animation="animated zoomInRight">E.TOURISM <strong>education school</strong></h2>
+										<p class="lead" data-animation="animated fadeInLeft">Students in digital travel and tourism service management - going to study - going to work - going to develop
+                                        </p>
+											<a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Read More</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+			<div class="carousel-item">
+				<div id="home" class="first-section" style="background-image:url('images/sliderh3.jpg');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-center">
+									<div class="big-tagline">
+										<h2 data-animation="animated zoomInRight"><strong>E.TOURISM</strong> Travel</h2>
+										<p class="lead" data-animation="animated fadeInLeft">Langbiang hùng vĩ và trải nghiệm văn hoá cồng chiêng tây nguyên
+											FREE Reboots</p>
+											<a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Read More</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+			<!-- Left Control -->
+			<a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="fa fa-angle-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+
+			<!-- Right Control -->
+			<a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="fa fa-angle-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3 id="about-location">About</h3>
+                    <p class="lead">The travel and tourism management industry is the field responsible for organizing, managing, and implementing tourism-related activities, assigning work to tour guides, and receiving information.
+                    </p>
+                </div>
+            </div><!-- end title -->
+        
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h4>2024 BEST VKU education school</h4>
+                        <h2>Welcome to VKU education school</h2>
+                        <p>If you have nothing, but you are passionate of travel, passionate of travel, the majority of digital travel and tourism service management at #dec #vku is an extremely bright choice.</p>
+
+                        <p> VKU has a team of high-quality lecturers who are Masters and Doctors graduated from famous domestic and international universities: Korea, Poland, France, England, Germany, New Zealand, Japan... always Enthusiastic, ready to share and accompany learners. </p>
+
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+				
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="images/welcomto.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+			</div>
+			<div class="row align-items-center">
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="images/anhH2.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+				
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h2>Major in Digital Travel & Tourism Service Management.</p>
+
+                        <p style="font-size: 15px; line-height: 2;">The travel and tourism management industry is the field responsible for organizing, managing, and implementing tourism-related activities, assigning work to tour guides, and receiving information. information to coordinate with departments and authorities to resolve issues, design tourism programs... on a digital platform
+                        </p>
+
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <section class="section lb page-section">
+		<div class="container">
+			 <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Our history</h3>
+                    <p class="lead">VKU is proud to be the only and leading public university in the Central - Central Highlands region</p>
+                </div>
+            </div><!-- end title -->
+			<div class="timeline">
+				<div class="timeline__wrap">
+					<div class="timeline__items">
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-01">
+								<h2>VKU</h2>
+								<p>VKU is a member university of the University of Danang, established under Decision No. 15/QD-TTg dated January 3, 2020 of the Prime Minister.</p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-02">
+								<h2>VKU</h2>
+								<p>VKU is located on a 21.5-hectare plot of land within the Urban campus of the University of Danang, Ngu Hanh Son district, Da Nang city.
+                                </p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-03">
+								<h2>VKU</h2>
+								<p>VKU has a strong team of officials, managers and lecturers to meet the quantity and ensure quality to implement the University's training programs.
+                                </p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-04">
+								<h2>VKU</h2>
+								<p>VKU has a cooperation network of more than 200 partners who are businesses, universities, research institutes at home and abroad
+                                </p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-01">
+								<h2>VKU</h2>
+								<p>VKU is a member university of the University of Danang, established under Decision No. 15/QD-TTg dated January 3, 2020 of the Prime Minister.</p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-02">
+								<h2>VKU</h2>
+								<p>VKU is located on a 21.5-hectare plot of land within the Urban campus of the University of Danang, Ngu Hanh Son district, Da Nang city.
+                                </p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-03">
+								<h2>VKU</h2>
+								<p>VKU has a strong team of officials, managers and lecturers to meet the quantity and ensure quality to implement the University's training programs.
+                                </p>
+							</div>
+						</div>
+						<div class="timeline__item">
+							<div class="timeline__content img-bg-04">
+								<h2>VKU</h2>
+								<p>VKU has a cooperation network of more than 200 partners who are businesses, universities, research institutes at home and abroad
+                                </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="section cl">
+		<div class="container">
+			<div class="row text-left stat-wrap">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-study"></i></span>
+					<p class="stat_count">1500</p>
+					<h3>Targets</h3>
+				</div><!-- end col -->
+
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-online"></i></span>
+					<p class="stat_count">16</p>
+					<h3>Specialized</h3>
+				</div><!-- end col -->
+
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-years"></i></span>
+					<p class="stat_count">4</p>
+					<h3>Years Completed</h3>
+				</div><!-- end col -->
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</div><!-- end section -->
+
+    <!-- <div id="plan" class="section lb">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Choose Your Plan</h3>
+                <p>Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="message-box">
+                        <ul class="nav nav-pills nav-stacked" id="myTabs">
+                            <li><a class="active" href="#tab1" data-toggle="pill">Monthly Subscription</a></li>
+                            <li><a href="#tab2" data-toggle="pill">Yearly Subscription</a></li>
                         </ul>
                     </div>
-                    <div class="toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
                 </div>
             </div>
-        </div>
 
-    </header>
-    <section>
+            <hr class="invis">
 
-        <div class="main-content padding-100">
-            <div class="content-poster">
-                <div class="poster">
-                    <div class="content-poster-left">
-                        <img src="./assets/image/logo.png" alt="">
-                        <h2>MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</h2>
-                        <div class="fake-layer-poster"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Est, neque delectus velit ullam veritatis facilis dignissimos
-                            dolorem deserunt id iure fugit unde voluptate odit earum modi
-                            nihil accusantium labore cum.</p>
-                        <a href="" id="btn-download">Dowload</a>
-                    </div>
-                    <div class="content-poster-right">
-                        <form action="">
-                            <p>Try Your <span id="free">FREE</span> Trail Today</p>
-                            <input type="text" placeholder="Name" />
-                            <input type="text" placeholder="Email" />
-                            <input type="text" placeholder="Password" />
-                            <a href="" id="btn-get">Get-Started</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active fade show" id="tab1">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$45</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$59</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
 
-    </section>
-    <section>
-
-        <div class="slider padding-100">
-            <div class="content-slider">
-                <div class="slider-container">
-                    <div class="custom-buttons">
-                        <button class="custom-button" id="button1">TAB 1</button>
-                        <button class="custom-button" id="button2">TAB 2</button>
-                        <button class="custom-button" id="button3">TAB 3</button>
-                    </div>
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <!--  -->
-                            <div class="swiper-slide">
-                                <div class="content-slider-left">
-                                    <h3>Tabs with soft transitioning effect 1.</h3>
-                                    <p class="sologan">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenean euismod bibendum laoreet. Proin gravida dolor sit
-                                        amet lacus accumsan et viverra justo commodo. Proin
-                                        sodales pulvinar tempor. Cum sociis natoque penatibus et
-                                        magnis dis parturient montes
-                                    </p>
-                                    <p class="sologan">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenean euismod bibendum laoreet.
-                                    </p>
-                                    <a href="" class="btn-download-silder">Download</a>
-                                </div>
-                                <div class="content-slider-right">
-                                    <img src="./assets/image/pic1.png" alt="" />
-                                </div>
-                            </div>
-                            <!--  -->
-                            <div class="swiper-slide">
-                                <div class="content-slider-left">
-                                    <h3>Tabs with soft transitioning effect 2.</h3>
-                                    <p class="sologan">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenean euismod bibendum laoreet. Proin gravida dolor sit
-                                        amet lacus accumsan et viverra justo commodo. Proin
-                                        sodales pulvinar tempor. Cum sociis natoque penatibus et
-                                        magnis dis parturient montes
-                                    </p>
-                                    <p class="sologan">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenean euismod bibendum laoreet.
-                                    </p>
-                                    <a href="" class="btn-download-silder">Download</a>
-                                </div>
-                                <div class="content-slider-right">
-                                    <img src="./assets/image/pic1.png" alt="" />
-                                </div>
-                            </div>
-                            <!--  -->
-                            <div class="swiper-slide">
-                                <div class="content-slider-left">
-                                    <h3>Tabs with soft transitioning effect 3.</h3>
-                                    <p class="sologan">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenean euismod bibendum laoreet. Proin gravida dolor sit
-                                        amet lacus accumsan et viverra justo commodo. Proin
-                                        sodales pulvinar tempor. Cum sociis natoque penatibus et
-                                        magnis dis parturient montes
-                                    </p>
-                                    <p class="sologan">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenean euismod bibendum laoreet.
-                                    </p>
-                                    <a href="" class="btn-download-silder">Download</a>
-                                </div>
-                                <div class="content-slider-right">
-                                    <img src="./assets/image/pic1.png" alt="" />
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$85</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-
-    </section>
-
-    <section>
-
-        <div class="content padding-100">
-            <div class="wrap-main">
-                <div class="wrap_2 ">
-                    <div class="picture">
-                    </div>
-
-                    <div class="tittle-right">
-                        <div class="text-top">
-                            <h4 style="font-weight: bolder;">Sub list section</h4>
-                            <p id="line-bottom">______</p>
-                            <p class="sologan">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Expedita voluptatem quam doloribus nisi suscipit natus alias cum,
-                                quasi assumenda omnis sit modi praesentium! </p>
-                        </div>
-                        <div class="text-bottom">
-                            <div class="text_group">
-                                <div id="box-icon">
-                                    <i class="fa fa-cloud-download" style="font-size: 20px; line-height: 50px;"
-                                        aria-hidden="true"></i>
+                        <div class="tab-pane fade" id="tab2">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$477</h2>
+                                            <h3>Year</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="text" id="text">
-                                    <h6>Title</h6>
-                                    <p class="sologan">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Unde amet necessitatibus corrupti laboriosam omnis ut totam! </p>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$485</h2>
+                                            <h3>Year</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text_group">
-                                <div id="box-icon">
-                                    <i class="fa fa-cloud-download" style="font-size: 20px; line-height: 50px;"
-                                        aria-hidden="true"></i>
-                                </div>
-                                <div class="text" id="text">
-                                    <h6>Title</h6>
-                                    <p class="sologan">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Unde amet necessitatibus corrupti laboriosam omnis ut totam! </p>
+
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$500</h2>
+                                            <h3>Year</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -195,181 +536,158 @@
                 </div>
             </div>
         </div>
+    </div> -->
+    <!-- end section -->
 
-    </section>
-    <section>
+    <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('images/parallax_04.jpg');">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Testimonials</h3>
+                <p>VKU is proud to be the only and leading public university in the Central - Central Highlands region
+                </p>
+            </div><!-- end title -->
 
-        <div class="content_2 padding-100">
-            <div class="wrap-main">
-                <div class="wrap_2">
-                    <div class="tittle-leftt">
-                        <div class="text-top">
-                            <h4 style="font-weight: bolder;">Standard Picture Section</h4>
-                            <p id="line-bottom">______</p>
-                            <p class="sologan">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Expedita voluptatem quam doloribus nisi suscipit natus alias cum,
-                                quasi assumenda omnis sit modi praesentium! </p>
-                            <p class="sologan">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Unde amet necessitatibus corrupti laboriosam omnis ut totam! </p>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="testi-carousel owl-carousel owl-theme">
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="images/testi_01.png" alt="" class="img-fluid">
+                                <h4>James Fernando </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                            </div>
+                            <!-- end testi-meta -->
                         </div>
-                    </div>
-                    <div class="picture_2">
-                    </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="images/testi_02.png" alt="" class="img-fluid">
+                                <h4>Jacques Philips </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
+                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+                    </div><!-- end carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <div class="parallax section dbcolor">
+        <div class="container">
+            <div class="row logos">
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="images/logo_01.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="images/logo_02.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="images/logo_03.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="images/logo_04.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="images/logo_05.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="images/logo_06.png" alt="" class="img-repsonsive"></a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>About US</h3>
+                        </div>
+                        <p> Center for Learning Resources and Communication
+                            Center for Foreign Languages ​​- Information Technology
+                            Center for IT Administration and Development
+                            Dormitory Management Team - Community Service</p>   
+						<div class="footer-right">
+							<ul class="footer-links-soi">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-github"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul><!-- end links -->
+						</div>						
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+				<div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Information Link</h3>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Home</a></li>
+                            <!-- <li><a href="#">Pricing</a></li> -->
+							<li><a href="#">About</a></li>
+                            <li><a href="#">Course</a></li>
+							<li><a href="#">Contact</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            <!-- <li><a href="mailto:#">info@yoursite.com</a></li> -->
+                            <li><a href="#">info@vku.udn.vn</a></li>
+                            <li>470 Trần Đại Nghĩa, Q. Ngũ Hành Sơn, Tp. Đà Nẵng</li>
+                            <li>0236.3.667.117</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-center">                   
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a></p>
                 </div>
             </div>
-        </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
 
-    </section>
-    <section>
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
-        <div class="wrap-main">
-            <div class="awesome">
-                <h3 class="tittle_why">WHY THIS IS AWESOME</h3>
-                <div class="line_fake"></div>
-                <p id="text_why">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <div class="cards_awesome">
-                    <div class="card_awesome">
-                        <div id="box-icon2">
-                            <i class="fa-regular fa-lightbulb" style="font-size: 20px; line-height: 50px;"
-                                aria-hidden="true"></i>
-                        </div>
-                        <h3 class="tittle_awesome">Thoughtful Design</h3>
-                        <p class="slogan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse
-                            ducimus atque, tempore labore, repellat, reprehenderit eos sit aspernatur dolores fugiat
-                            natus? Dolores itaque incidunt facere laborum nam rem iusto.</p>
-                    </div>
-                    <div class="card_awesome">
-                        <div id="box-icon2">
-                            <i class="fa-regular fa-keyboard" style="font-size: 20px; line-height: 50px;"
-                                aria-hidden="true"></i>
-                        </div>
-                        <h3 class="tittle_awesome">Well Crafted</h3>
-                        <p class="slogan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse
-                            ducimus atque, tempore labore, repellat, reprehenderit eos sit aspernatur dolores fugiat
-                            natus? Dolores itaque incidunt facere laborum nam rem iusto.</p>
-                    </div>
-                    <div class="card_awesome">
-                        <div id="box-icon2">
-                            <i class="fa fa-bolt" style="font-size: 20px; line-height: 50px;" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="tittle_awesome">Easy to Customize</h3>
-                        <p class="slogan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam esse
-                            ducimus atque, tempore labore, repellat, reprehenderit eos sit aspernatur dolores fugiat
-                            natus? Dolores itaque incidunt facere laborum nam rem iusto.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section>
-
-        <div class="stylish_main padding-100">
-            <div class="stylish">
-                <h1 class="tittle_box">STYLISH AXURE DESIGN</h1>
-                <p class="line_fake_2"></p>
-                <p class="text_box">Use the sections you need, remove the ones you don't. Create gorgeous prototypes
-                    faster than ever!</p>
-                <a class="btn-download" href="" id="download">Download</a>
-            </div>
-        </div>
-
-    </section>
-
-    <section>
-
-        <div class="contact padding-100">
-            <div class="tittle-contact">
-                <h2>CONTACT US</h2>
-                <p id="line-bottom" style="line-height: 40px;">______</p>
-                <p class="sologan">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            </div>
-            <form class="form_contact" action="#">
-                <div class="form_flex ">
-                    <div class="gr-contact">
-                        <div class="input-contact">
-                            <input type="text" required placeholder="Name">
-                        </div>
-                        <div class="input-contact">
-                            <input type="text" required placeholder="Email">
-                        </div>
-                        <div class="input-contact">
-                            <input type="text" required placeholder="Subject">
-                        </div>
-                    </div>
-                    <div class="textarea-contact">
-                        <textarea type="text" placeholder="Message" id="input-mess" rows="8"></textarea>
-                    </div>
-                    <div class="btn_contact">
-                        <input class="button_contact" type="submit" value="Send Message">
-                    </div>
-                </div>
-            </form>
-        </div>
-
-    </section>
-    <footer>
-        <div class="footer">
-            <div class="content-footer">
-                <img src="./assets/image/icon.png" alt="">
-                <span style="margin-top: 5px;"> @ 2021 Axure Themes</span>
-            </div>
-        </div>
-
-    </footer>
-
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+	<script src="js/timeline.min.js"></script>
+	<script>
+		timeline(document.querySelectorAll('.timeline'), {
+			forceVerticalMode: 700,
+			mode: 'horizontal',
+			verticalStartPosition: 'left',
+			visibleItems: 4
+		});
+	</script>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper', {
-        auplay: true,
-    });
-
-    document.getElementById('button1').addEventListener('click', function () {
-        swiper.slideTo(0);
-    });
-    document.getElementById('button2').addEventListener('click', function () {
-        swiper.slideTo(1);
-    });
-    document.getElementById('button3').addEventListener('click', function () {
-        swiper.slideTo(2);
-    });
-
-    const buttons = document.querySelectorAll('.custom-button');
-
-    buttons.forEach((button, index) => {
-        button.addEventListener('click', function () {
-            buttons.forEach((btn) => {
-                btn.classList.remove('active');
-            });
-
-            this.classList.add('active');
-
-            swiper.slideTo(index);
-        });
-    });
-
-</script>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-</script>
-
 </html>

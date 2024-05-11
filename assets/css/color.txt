@@ -1,4 +1,0 @@
-Xám: d5d5d5
-Nâu: b8a47e
-button: ff9b51 
-tab: ff8b38
